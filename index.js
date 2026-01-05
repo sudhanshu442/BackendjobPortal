@@ -25,6 +25,12 @@ app.use("/api/v1/user",userRoute);
 app.use("/api/v1/company",companyRoute);
 app.use("/api/v1/job",jobRoute);
 app.use("/api/v1/application",applicationRoute);
+app.get('/',(req,res)=>{
+    res.send({
+        activeStatus:true,
+        error:false,
+    })
+})
 connectDB().then(() => {
 app.listen(PORT,()=>{
     console.log(`Server running on ${PORT}`);
